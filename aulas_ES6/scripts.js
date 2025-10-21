@@ -177,3 +177,59 @@ const userName = 'Lucas'
 const age = 30
 
 console.log(`O nome dele e ${userName} e ele tem ${age} anos.`)
+
+
+console.log("")
+console.log("6 - Destruturing")
+console.log("")
+// 6 - Destruturing
+
+//COM ARRAY 
+
+const fruits = ['Melancia', 'Laranja', 'Uva']
+
+const [f1, f2, f3] = fruits
+
+console.log(f1)
+console.log(f2)
+console.log(f3)
+
+console.log("")
+//COM OBJETOS
+
+
+const productDetails = {
+    name: "Mouse",
+    price: 39.99,
+    category: "Periféricos",
+    color: "Cinza"
+}
+
+const {name: productName, price, category: productCategory, color} = productDetails
+
+console.log(`O nome do produto é ${productName}, ele custa R$${price}, cor ${color} e categoria é ${productCategory}`)
+
+
+console.log("")
+console.log("7 - Spread Operator")
+console.log("")
+// 7 - Spread Operator
+
+const a1 = [1, 2, 3]
+const a2 = [4, 5, 6]
+
+const a3 = [...a1, ...a2]
+
+console.log(a3)
+
+const a4= [0, ...a1, 4]
+
+console.log(a4)
+
+const carName = {name: 'Gol'}
+const carBrand = {brand: 'VW'}
+const otherInfos = {km: 10050, price: 4999.00}
+
+const car = {...carName, ...carBrand, ...otherInfos, wheels: 4}
+
+console.log(car)
