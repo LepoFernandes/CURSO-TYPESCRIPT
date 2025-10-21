@@ -154,12 +154,26 @@ products.map((product)=> {
 console.log(products)
 
 
-//Essa arrow eu fiz sozinho aplica um desconto nos produtos q sao filtrados como onSale
+//Essa arrow eu fiz sozinho aplica um desconto nos produtos q sao filtrados como onSale usando o map pra criar outro array
 
-products.map((product) => {
-    if (product.onSale == true){
-        product.price -= product.price * 0.10
-    }
-})
 
-console.log(products)
+const productsOnSale = products.filter((products) => products.onSale == true)
+
+const newOnSale = productsOnSale.map(product => ({
+    ...product,
+    price : product.price * 0.9 
+
+}));
+
+console.log(newOnSale)
+
+
+console.log("")
+console.log("5 - Templates Literals")
+console.log("")
+// 5 - Templates Literals
+
+const userName = 'Lucas'
+const age = 30
+
+console.log(`O nome dele e ${userName} e ele tem ${age} anos.`)
