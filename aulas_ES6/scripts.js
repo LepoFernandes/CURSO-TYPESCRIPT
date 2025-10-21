@@ -96,5 +96,70 @@ const user = {
     }
 }
 
-user.sayUserName()
-user.sayUserNameArrow()
+//user.sayUserName()
+//user.sayUserNameArrow()
+
+
+console.log("")
+console.log("3 - Filter Metod")
+console.log("")
+// 3 - Filter Metod
+
+const arr = [1, 2, 3, 4, 5]
+
+const highNumbers = arr.filter((n) => {
+    if (n >= 3) {
+        return n
+    }
+})
+
+console.log(highNumbers)
+
+const users = [
+    {name : "Lucas", available: true},
+    {name : "Mateus", available: false},
+    {name : "Pedro", available: true},
+    {name : "Marcos", available: false},
+]
+
+const availableUsers = users.filter((user) => user.available)
+
+console.log(availableUsers)
+
+const notAvailableUsers = users.filter((user) => !user.available)
+
+console.log(notAvailableUsers)
+
+
+console.log("")
+console.log("4 - Map Metod")
+console.log("")
+// 4 - Map Metod
+
+
+const products = [
+    {name : "Camisa", price: 10.99, category:'Roupas'},
+    {name : "Chaleira Eletrica", price: 49.99, category:'Eletro'},
+    {name : "Computador", price: 599.99, category:'Eletronicos'},
+    {name : "Headset", price: 59.99, category:'Eletronicos'},
+]
+
+products.map((product)=> {
+    if (product.category == 'Eletronicos' ){
+        product.onSale = true
+    }
+})
+
+
+console.log(products)
+
+
+//Essa arrow eu fiz sozinho aplica um desconto nos produtos q sao filtrados como onSale
+
+products.map((product) => {
+    if (product.onSale == true){
+        product.price -= product.price * 0.10
+    }
+})
+
+console.log(products)
