@@ -233,3 +233,61 @@ const otherInfos = {km: 10050, price: 4999.00}
 const car = {...carName, ...carBrand, ...otherInfos, wheels: 4}
 
 console.log(car)
+
+console.log("")
+console.log("8 - Classes")
+console.log("")
+// 8 - Classes
+
+class Product {
+    constructor(name,price){
+        this.name = name
+        this.price = price
+    }
+
+    productWithDiscount(discount){
+        return this.price * ((100- discount) / 100)
+    }
+}
+
+const shirt = new Product ("Camisa Gola V", 20)
+console.log(shirt.name + " " + shirt.price.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }))
+
+console.log(shirt.productWithDiscount(10).toLocaleString("pt-BR", { style: "currency", currency: "BRL" }))
+console.log(shirt.productWithDiscount(50).toLocaleString("pt-BR", { style: "currency", currency: "BRL" }))
+
+const sneaker = new Product("Sneaker Nike", 899)
+console.log(sneaker.name + " " + sneaker.price.toLocaleString("pt-BR", {style: "currency", currency: "BRL"}))
+
+console.log(sneaker.productWithDiscount(10).toLocaleString("pt-BR", { style: "currency", currency: "BRL" }))
+console.log(sneaker.productWithDiscount(50).toLocaleString("pt-BR", { style: "currency", currency: "BRL" }))
+
+console.log("")
+console.log("9 - Heranca")
+console.log("")
+// 9- Herenca
+
+class ProductWithAttributes extends Product{
+    constructor(name, price, colors){
+        super(name, price)
+        this.colors = colors
+    }
+
+    showColors(){
+        console.log("Cores Disponiveis : ")
+        this.colors.forEach((color) => {
+            console.log(color)
+        });
+    }
+}
+
+const hat = new ProductWithAttributes('Hat', 39.99, [
+    'Preto',
+    'Azul',
+    'Verde'
+])
+
+console.log(hat.name + " " + hat.price.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }))
+console.log(hat.productWithDiscount(25).toFixed(2))
+
+hat.showColors()
