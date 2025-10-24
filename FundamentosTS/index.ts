@@ -41,7 +41,18 @@ a = true
 
 console.log(a)
 
-//AULA - 4 = BOOLEAN
+//AULA - 4 = ANNOTATION OU INFERENEC
 console.log(" ")
 console.log("AULA 4")
 console.log(" ")
+
+const ann: string = "Teste"
+
+let inf = "Teste"
+
+//NOS DOIS CASOS ELE ENTENDEU QUE SAO STRINGS E NAO ACEITA Q TROQUE PRA NUMBER OU BOOLEAN
+
+
+//NA PROXIMA AULA ENSINA A CONFIGURAR O ARQUIVO DO TS USANDO tsc --init 
+
+console.log("testando")
