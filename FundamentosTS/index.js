@@ -35,4 +35,4 @@ var ann = "Teste";
 var inf = "Teste";
 //NOS DOIS CASOS ELE ENTENDEU QUE SAO STRINGS E NAO ACEITA Q TROQUE PRA NUMBER OU BOOLEAN
 //NA PROXIMA AULA ENSINA A CONFIGURAR O ARQUIVO DO TS USANDO tsc --init 
-console.log("testando");
+console.log("testando 1");

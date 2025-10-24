@@ -55,4 +55,4 @@ let inf = "Teste"
 
 //NA PROXIMA AULA ENSINA A CONFIGURAR O ARQUIVO DO TS USANDO tsc --init 
 
-console.log("testando")
+console.log("testando 1")
