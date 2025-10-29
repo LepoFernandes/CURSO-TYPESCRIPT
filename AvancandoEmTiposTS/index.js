@@ -45,3 +45,38 @@ setTimeout(function () {
     //console.log(parseFloat(sallary))
     //console.log(sallary)
 }, 2000);
+//AULA 6 - TIPOS DE OBJETO
+console.log("");
+console.log("AULA 6");
+console.log("");
+function passCoordinates(coord) {
+    console.log("X coordinates: " + coord.x);
+    console.log("Y coordinates: " + coord.y);
+}
+var objCoord = { x: 329, y: 85.6 };
+passCoordinates(objCoord);
+//AULA 7 - PROPRIEDADES OPCIONAIS E VALIDANDO ARGUMENTOS
+console.log("");
+console.log("AULA 7");
+console.log("");
+function setName(fullname) {
+    if (fullname.surname !== undefined) {
+        return "Ola, ".concat(fullname.name, " ").concat(fullname.surname, ", tudo bem?");
+    }
+    else {
+        return "Ola, ".concat(fullname.name, ", tudo bem?");
+    }
+}
+var objName = { name: "Lucas", surname: "Fernandes" }; //COM SOBRENOME
+var objName2 = { name: "Lucas" }; //SEM SOBRENOME
+console.log(setName(objName));
+console.log(setName(objName2));
+//AULA 8 - UNION TYPE
+console.log("");
+console.log("AULA 8");
+console.log("");
+function showBalance(balance) {
+    console.log("O saldo da conta e R$".concat(balance));
+}
+showBalance(100);
+showBalance("500");
