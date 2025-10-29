@@ -13,9 +13,35 @@ var nums = [100, 200];
 nums.push(500);
 console.log(nums);
 //AULA 2 - ANY 
+console.log("");
 console.log("AULA 2");
 console.log("");
 var arr1 = [1, "teste", true, [], { nome: "Lucas" }];
 console.log(arr1);
 arr1.push([1, 2, 3]);
 console.log(arr1);
+//AULA 3 - PARAMETRO TIPADOS
+console.log("");
+console.log("AULA 3");
+console.log("");
+function soma(a, b) {
+    console.log(a + b);
+}
+soma(4, 5);
+//AULA 4 - TIPO DE RETORNO
+console.log("");
+console.log("AULA 4");
+console.log("");
+function mySum(a, b) {
+    return a + b;
+}
+console.log(mySum(5, 8));
+//AULA 5 - FUNCOES ANONIMAS
+console.log("");
+console.log("AULA 5");
+console.log("");
+setTimeout(function () {
+    var sallary = 1000;
+    //console.log(parseFloat(sallary))
+    //console.log(sallary)
+}, 2000);
