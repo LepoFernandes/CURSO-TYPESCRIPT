@@ -116,3 +116,57 @@ showBalance(100)
 showBalance("500")
 
 const arr2: Array<number | string | boolean> = [1, "Teste", 5, true, false]
+
+//AULA 9 - AVANCANDO EM UNION TYPE
+console.log("")
+console.log("AULA 9")
+console.log("")
+
+function showUserRole(role: boolean | string){
+    if(typeof role === "boolean"){
+        return "Usuario nao aprovado!"
+    }
+    return `A funcao do usuario e: ${role}`
+}
+
+console.log(showUserRole(false))
+console.log(showUserRole("Admin"))
+
+
+//AULA 10 - TYPE ALIAS
+console.log("")
+console.log("AULA 10")
+console.log("")
+
+type ID = string | number
+
+function showId(id: ID){
+    console.log(`The ID is: ${id}`)
+}
+
+showId(1)
+showId("2")
+
+
+//AULA 11 - INTERFACE
+console.log("")
+console.log("AULA 11")
+console.log("")
+
+interface Point{
+    x: number
+    y: number
+    z: number
+}
+
+function showCoords(obj: Point){
+    console.log(`X: ${obj.x} Y:${obj.y} Z:${obj.z}`)
+}
+
+const coordObj: Point = {
+    x: 10,
+    y: 15,
+    z: 20
+}
+
+showCoords(coordObj)

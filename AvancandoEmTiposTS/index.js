@@ -80,3 +80,38 @@ function showBalance(balance) {
 }
 showBalance(100);
 showBalance("500");
+var arr2 = [1, "Teste", 5, true, false];
+//AULA 9 - AVANCANDO EM UNION TYPE
+console.log("");
+console.log("AULA 9");
+console.log("");
+function showUserRole(role) {
+    if (typeof role === "boolean") {
+        return "Usuario nao aprovado!";
+    }
+    return "A funcao do usuario e: ".concat(role);
+}
+console.log(showUserRole(false));
+console.log(showUserRole("Admin"));
+//AULA 10 - TYPE ALIAS
+console.log("");
+console.log("AULA 10");
+console.log("");
+function showId(id) {
+    console.log("The ID is: ".concat(id));
+}
+showId(1);
+showId("2");
+//AULA 11 - INTERFACE
+console.log("");
+console.log("AULA 11");
+console.log("");
+function showCoords(obj) {
+    console.log("X: ".concat(obj.x, " Y:").concat(obj.y, " Z:").concat(obj.z));
+}
+var coordObj = {
+    x: 10,
+    y: 15,
+    z: 20
+};
+showCoords(coordObj);
