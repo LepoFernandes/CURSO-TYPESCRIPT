@@ -170,3 +170,44 @@ const coordObj: Point = {
 }
 
 showCoords(coordObj)
+
+
+//AULA 12 - INTERFACE X TYPE ALIAS
+console.log("")
+console.log("AULA 12")
+console.log("")
+
+interface Person{
+    name: string
+}
+
+interface Person{
+    age: number
+}
+
+const somePerson: Person = {name: "Lucas", age: 26}
+
+console.log(somePerson) //DA PRA IMPLEMENTAR MAIS DADOS JA NO TYPE NAO PQ DARIA ERRO 
+
+type personType = {
+    name: string
+}
+
+//type personType = {age: number}
+
+
+//AULA 13 - LITERAL TYPES
+console.log("")
+console.log("AULA 13")
+console.log("")
+
+let test : "testando"
+
+test = "testando"
+console.log(test)
+
+function showDirection(direction: "left" | "right" | "center"){
+    console.log(`A direcao sera: ${direction}` )
+}
+
+showDirection("center")

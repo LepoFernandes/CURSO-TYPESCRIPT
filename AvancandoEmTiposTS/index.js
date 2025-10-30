@@ -115,3 +115,21 @@ var coordObj = {
     z: 20
 };
 showCoords(coordObj);
+//AULA 12 - INTERFACE X TYPE ALIAS
+console.log("");
+console.log("AULA 12");
+console.log("");
+var somePerson = { name: "Lucas", age: 26 };
+console.log(somePerson); //DA PRA IMPLEMENTAR MAIS DADOS JA NO TYPE NAO PQ DARIA ERRO 
+//type personType = {age: number}
+//AULA 13 - LITERAL TYPES
+console.log("");
+console.log("AULA 13");
+console.log("");
+var test;
+test = "testando";
+console.log(test);
+function showDirection(direction) {
+    console.log("A direcao sera: ".concat(direction));
+}
+showDirection("center");
