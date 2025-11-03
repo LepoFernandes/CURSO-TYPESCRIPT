@@ -133,3 +133,24 @@ function showDirection(direction) {
     console.log("A direcao sera: ".concat(direction));
 }
 showDirection("center");
+//AULA 14 - NON-NULL ASSERTATION OPERATORS
+console.log("");
+console.log("AULA 14");
+console.log("");
+var p = document.getElementById("some-p");
+console.log(p.innerText);
+//AULA 15 - BIGINT
+console.log("");
+console.log("AULA 15");
+console.log("");
+var n;
+n = 1000n;
+console.log(n);
+//AULA 16 - SYMBOL
+console.log("");
+console.log("AULA 16");
+console.log("");
+var symbolA = Symbol("a");
+var symbolB = Symbol("a");
+console.log(symbolA == symbolB);
+console.log(symbolA === symbolB);

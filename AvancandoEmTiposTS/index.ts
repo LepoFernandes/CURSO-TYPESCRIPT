@@ -211,3 +211,37 @@ function showDirection(direction: "left" | "right" | "center"){
 }
 
 showDirection("center")
+
+
+//AULA 14 - NON-NULL ASSERTATION OPERATORS
+console.log("")
+console.log("AULA 14")
+console.log("")
+
+const p = document.getElementById("some-p")
+
+console.log(p!.innerText)
+
+
+
+//AULA 15 - BIGINT
+console.log("")
+console.log("AULA 15")
+console.log("")
+
+let n : bigint
+
+n = 1000n
+
+console.log(n)
+
+//AULA 16 - SYMBOL
+console.log("")
+console.log("AULA 16")
+console.log("")
+
+let symbolA: symbol  = Symbol("a")
+let symbolB = Symbol("a")
+
+console.log(symbolA == symbolB)
+console.log(symbolA === symbolB)
