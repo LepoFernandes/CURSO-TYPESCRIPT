@@ -70,3 +70,58 @@ function mergeArrays(arr1, arr2) {
 }
 console.log(mergeArrays([1, 2, 3], [5, 6, 7]));
 console.log(mergeArrays([1, 2, 3], ["5", "6", "7"]));
+//AULA 6 - PARAMETROS OPCIONAIS
+console.log("");
+console.log("AULA 6");
+console.log("");
+function apresentarPessoa(name, age, occupation) {
+    if (age && occupation) {
+        return console.log("Oi, meu nome \u00E9 ".concat(name, "! Tenho ").concat(age, " anos e sou ").concat(occupation, " "));
+    }
+    else if (age) {
+        occupation = "desempregado";
+        return console.log("Oi, meu nome \u00E9 ".concat(name, "! Tenho ").concat(age, " anos e sou ").concat(occupation, " "));
+    }
+    else if (occupation) {
+        return console.log("Oi, meu nome \u00E9 ".concat(name, "! E sou ").concat(occupation, " "));
+    }
+    else {
+        return console.log("Oi, meu nome \u00E9 ".concat(name, "! "));
+    }
+}
+apresentarPessoa("Lucas", 26, "Programador");
+apresentarPessoa("Lucas", undefined, "Programador");
+apresentarPessoa("Lucas");
+apresentarPessoa("Lucas", 26);
+//AULA 7 - PARAMETRO DEFAULT
+console.log("");
+console.log("AULA 7");
+console.log("");
+function calcularPagamento(valorBase, metodo, parcelas) {
+    if (metodo === void 0) { metodo = "dinheiro"; }
+    if (metodo === "dinheiro" || metodo === "pix") {
+        var valorAlterado = valorBase;
+        valorAlterado = valorBase - (valorBase * 0.1);
+        return console.log("Pagamento feito em dinheiro ou pix no valor de ".concat(valorAlterado.toFixed(2)));
+    }
+    else if (metodo === "cartao") {
+        if (parcelas === 1) {
+            return console.log("Pagamento feito no cartao em 1x de ".concat(valorBase.toFixed(2)));
+        }
+        else if (parcelas) {
+            if (parcelas > 1 && parcelas < 6) {
+                var valorAlterado = valorBase + (valorBase * 0.05);
+                valorAlterado = valorAlterado / parcelas;
+                return console.log("Pagamento feito no cartao em ".concat(parcelas, " de ").concat(valorAlterado.toFixed(2)));
+            }
+            else if (parcelas >= 7) {
+                var valorAlterado = valorBase + (valorBase * 0.10);
+                valorAlterado = valorAlterado / parcelas;
+                return console.log("Pagamento feito no cartao em ".concat(parcelas, " de ").concat(valorAlterado.toFixed(2)));
+            }
+        }
+    }
+}
+calcularPagamento(100);
+calcularPagamento(100, "cartao", 3);
+calcularPagamento(100, "cartao", 12);
