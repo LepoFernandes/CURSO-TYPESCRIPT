@@ -169,3 +169,35 @@ calcularPagamento(100, "cartao", 12);
 //LEMBRAR SEMPRE DE TRATAR O MAIS DIFICIL OU EXTENSO PRIMEIRO Q DAI SOBRA O MAIS SIMPLES PRA UM UNICO ELSE
 //NAO FIZ ISSO NO CASO DE CIMA MAS PODERIA
 
+
+//AULA 8 - UNKOWN
+console.log("")
+console.log("AULA 8")
+console.log("")
+
+function doSomething(x: unknown){
+    //console.log(x[0])
+}
+
+doSomething([1, 2, 3]) //ESSE CASO NAO FUNCIONA PQ NAO TEM UMA VALIDACAO SE O X REALMENTE E ARRAY
+
+
+function doSomethingReal(x: unknown){
+    if(Array.isArray(x)){
+        console.log(x[0])
+    }
+}
+
+doSomethingReal([1, 2, 3])
+
+
+//AULA 9 - NEVER
+console.log("")
+console.log("AULA 9")
+console.log("")
+
+function showErrorMessage(msg: string): never{
+    throw new Error(msg)
+}
+
+//showErrorMessage("Algum erro!")
