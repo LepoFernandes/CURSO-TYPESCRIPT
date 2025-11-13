@@ -201,3 +201,33 @@ function showErrorMessage(msg: string): never{
 }
 
 //showErrorMessage("Algum erro!")
+
+
+//AULA 10 - REST OPERATOR
+console.log("")
+console.log("AULA 10")
+console.log("")
+
+
+function sumAll(...n: number[]){
+    return n.reduce((number, sum) => sum + number)
+}
+
+
+console.log(sumAll(1, 2, 3, 4, 5))
+console.log(sumAll(358, 566, 7))
+
+
+//AULA 11 - DESTRUCTURING 
+console.log("")
+console.log("AULA 11")
+console.log("")
+
+function showDetails({name, price}: {name: string, price: number}) : string{
+    return `O nome do produto: ${name}, e ele custa R${price}`
+}
+
+const shirt = {name : "Camisa", price : 49.99}
+
+console.log(showDetails(shirt))
+console.log(showDetails({name: "Tenis", price: 29.99}))
