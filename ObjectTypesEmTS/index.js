@@ -48,3 +48,40 @@ var fusca = {
     wheels: 4
 };
 console.log(fusca);
+//fusca.wheels = 5  NAO DEIXA ALTERAR
+//AULA 4- INDEX SIGNATURE
+console.log("");
+console.log("AULA 4");
+console.log("");
+var coords = {
+    x: 10
+};
+coords.y = 15;
+console.log(coords);
+//AULA 5- EXTENDS TYPES
+console.log("");
+console.log("AULA 5");
+console.log("");
+var human1 = {
+    name: "Pedro",
+    age: 26
+};
+var superHuman1 = {
+    name: "Lucas",
+    age: 26,
+    superPowers: "Force"
+};
+var superHuman2 = {
+    name: "Vitor",
+    age: 26,
+    superPowers: "Fire"
+};
+var superHuman3 = {
+    name: "Paulo",
+    age: 26,
+    superPowers: "Ice"
+};
+console.log(human1);
+console.log(superHuman1);
+console.log(superHuman2);
+console.log(superHuman3);

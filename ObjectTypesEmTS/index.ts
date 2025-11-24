@@ -82,3 +82,59 @@ console.log(fusca)
 console.log("")
 console.log("AULA 4")
 console.log("")
+
+interface CoordObjects {
+    [index: string] : number //PRECISA SEGUIR ESSA SINTAXE NAO ACEITARIA UM TIPO NUMBER RECEBENDO TIPO STRING POR EXEMPLO
+}
+
+let coords: CoordObjects = {
+    x: 10
+}
+
+coords.y = 15
+
+console.log(coords)
+
+//AULA 5- EXTENDS TYPES
+console.log("")
+console.log("AULA 5")
+console.log("")
+
+
+interface Human{
+    name: string
+    age: number
+}
+
+interface superHuman extends Human{
+    superPowers: "Force" | "Fire" | "Ice"
+}
+
+const human1: Human = {
+    name: "Pedro",
+    age: 26
+}
+
+const superHuman1: superHuman = {
+    name: "Lucas",
+    age: 26,
+    superPowers: "Force"
+}
+
+const superHuman2: superHuman = {
+    name: "Vitor",
+    age: 26,
+    superPowers: "Fire"
+}
+
+const superHuman3: superHuman = {
+    name: "Paulo",
+    age: 26,
+    superPowers: "Ice"
+}
+
+
+console.log(human1)
+console.log(superHuman1)
+console.log(superHuman2)
+console.log(superHuman3)
