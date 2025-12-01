@@ -138,3 +138,31 @@ console.log(human1)
 console.log(superHuman1)
 console.log(superHuman2)
 console.log(superHuman3)
+
+
+
+//AULA 6 - INTERSECTION TYPES
+console.log("")
+console.log("AULA 6")
+console.log("")
+
+
+interface Character{
+    name: string
+}
+
+interface Gun {
+    type: string
+    caliber: number
+}
+
+type humanWithGun = Character & Gun
+
+const arnold: humanWithGun = {
+    name:"Arnold",
+    type:"Shotgun",
+    caliber:12
+}
+
+console.log(arnold)
+console.log(arnold.caliber)
