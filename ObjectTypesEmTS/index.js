@@ -96,3 +96,38 @@ var arnold = {
 };
 console.log(arnold);
 console.log(arnold.caliber);
+//AULA 7 - ReadOnlyArray
+console.log("");
+console.log("AULA 7");
+console.log("");
+var myArray = ["Laranja", "Banana", "Abacaxi"];
+//myArray[3] = "Tomate"
+console.log(myArray);
+myArray.forEach(function (item) {
+    console.log("Fruta: " + item);
+});
+myArray.map(function (item) {
+    return "Fruta: ".concat(item);
+});
+console.log(myArray);
+//AULA 8 - Tuplas
+console.log("");
+console.log("AULA 8");
+console.log("");
+//number[]
+var myNumbers = [1, 2, 3, 4, 5];
+//const myNumber2: fiveNumbers = [1, 2, 3, 4, 5, 6]
+//const myNumber3: fiveNumbers = [1, "dois", 3, 4, true, 6]
+console.log(myNumbers);
+var person1 = ["Lucas", 26];
+console.log(person1[0]);
+console.log(person1);
+//AULA 9 - Tuplas com Readonly
+console.log("");
+console.log("AULA 9");
+console.log("");
+function showNumbers(number) {
+    console.log(number[0]);
+    console.log(number[1]);
+}
+showNumbers([1, 2]);

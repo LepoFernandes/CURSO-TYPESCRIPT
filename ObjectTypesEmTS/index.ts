@@ -166,3 +166,65 @@ const arnold: humanWithGun = {
 
 console.log(arnold)
 console.log(arnold.caliber)
+
+//AULA 7 - ReadOnlyArray
+console.log("")
+console.log("AULA 7")
+console.log("")
+
+let myArray: ReadonlyArray<string> = ["Laranja", "Banana", "Abacaxi"]
+
+//myArray[3] = "Tomate"
+
+console.log(myArray)
+
+myArray.forEach((item) => {
+    console.log("Fruta: " + item)
+})
+
+myArray.map((item) => {
+    return `Fruta: ${item}`
+})
+
+console.log(myArray)
+
+
+//AULA 8 - Tuplas
+console.log("")
+console.log("AULA 8")
+console.log("")
+
+type fiveNumbers = [number, number, number, number, number]
+
+//number[]
+
+const myNumbers: fiveNumbers = [1, 2, 3, 4, 5]
+
+//const myNumber2: fiveNumbers = [1, 2, 3, 4, 5, 6]
+//const myNumber3: fiveNumbers = [1, "dois", 3, 4, true, 6]
+
+console.log(myNumbers)
+
+type nameAndage = [string, number]
+
+const person1 = ["Lucas", 26]
+
+console.log(person1[0])
+console.log(person1)
+
+
+
+//AULA 9 - Tuplas com Readonly
+console.log("")
+console.log("AULA 9")
+console.log("")
+
+
+function showNumbers(number: readonly [number, number]){
+    console.log(number[0])
+    console.log(number[1])
+
+}
+
+
+showNumbers([1,2])
