@@ -1,3 +1,18 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 //AULA 1 - Campos em Classes
 console.log("");
 console.log("AULA 1 - CAMPOS EM CLASSES");
@@ -38,3 +53,60 @@ var Car = /** @class */ (function () {
 var fusca = new Car("Fusca");
 console.log(fusca);
 //fusca.wheels = 5 --- NAO ALTERA POR SER READONLY
+//AULA 4 - heranca e super
+console.log("");
+console.log("AULA 4 - HERANCA E SUPER");
+console.log("");
+var Machine = /** @class */ (function () {
+    function Machine(name) {
+        this.name = name;
+    }
+    return Machine;
+}());
+var KillerMachine = /** @class */ (function (_super) {
+    __extends(KillerMachine, _super);
+    function KillerMachine(name, guns) {
+        var _this = _super.call(this, name) || this;
+        _this.guns = guns;
+        return _this;
+    }
+    return KillerMachine;
+}(Machine));
+var trator = new Machine("Trator");
+console.log(trator);
+var tratorMatador = new KillerMachine("Trator Matador", 4);
+console.log(tratorMatador);
+//AULA 5 - METODOS
+console.log("");
+console.log("AULA 5 - METODOS");
+console.log("");
+var Dwarf = /** @class */ (function () {
+    function Dwarf(name) {
+        this.name = name;
+    }
+    Dwarf.prototype.greeting = function () {
+        console.log("Hello strange!");
+    };
+    return Dwarf;
+}());
+var jimmy = new Dwarf("Jimmy");
+jimmy.greeting();
+console.log(jimmy);
+//AULA 6 - Palavra this
+console.log("");
+console.log("AULA 6 - THIS");
+console.log("");
+var Truck = /** @class */ (function () {
+    function Truck(model, hp) {
+        this.model = model;
+        this.hp = hp;
+    }
+    Truck.prototype.showDetails = function () {
+        console.log("Caminhao do modelo: ".concat(this.model, ", que tem ").concat(this.hp, " cavalos de potencia"));
+    };
+    return Truck;
+}());
+var volvo = new Truck("Volvo", 400);
+volvo.showDetails();
+var scania = new Truck("Scania", 600);
+scania.showDetails();
