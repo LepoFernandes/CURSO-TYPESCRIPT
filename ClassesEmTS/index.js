@@ -110,3 +110,69 @@ var volvo = new Truck("Volvo", 400);
 volvo.showDetails();
 var scania = new Truck("Scania", 600);
 scania.showDetails();
+//AULA 7 - Getters
+console.log("");
+console.log("AULA 7 - GETTERS");
+console.log("");
+var Person = /** @class */ (function () {
+    function Person(name, surname) {
+        this.name = name;
+        this.surname = surname;
+    }
+    Object.defineProperty(Person.prototype, "fullName", {
+        get: function () {
+            return this.name + " " + this.surname;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return Person;
+}());
+var lucasFernandes = new Person("Lucas", "Fernandes");
+console.log(lucasFernandes);
+console.log(lucasFernandes.fullName);
+//AULA 8 - Setters
+console.log("");
+console.log("AULA 8 - SETTERS");
+console.log("");
+var Coords = /** @class */ (function () {
+    function Coords() {
+    }
+    Object.defineProperty(Coords.prototype, "fillX", {
+        set: function (x) {
+            if (x === 0) {
+                console.log("X sem sucesso!");
+                return;
+            }
+            this.x = x;
+            console.log("X inserido com sucesso!");
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Coords.prototype, "fillY", {
+        set: function (y) {
+            if (y === 0) {
+                console.log("Y sem sucesso!");
+                return;
+            }
+            this.y = y;
+            console.log("Y inserido com sucesso!");
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Coords.prototype, "getCoords", {
+        get: function () {
+            return "X: ".concat(this.x, " e Y: ").concat(this.y);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return Coords;
+}());
+var myCoords = new Coords();
+myCoords.fillX = 15;
+myCoords.fillY = 10;
+console.log(myCoords);
+console.log(myCoords.getCoords);

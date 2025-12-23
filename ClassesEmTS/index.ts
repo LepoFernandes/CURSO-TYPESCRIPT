@@ -134,3 +134,76 @@ volvo.showDetails()
 
 const scania = new Truck("Scania", 600)
 scania.showDetails()
+
+
+//AULA 7 - Getters
+console.log("")
+console.log("AULA 7 - GETTERS")
+console.log("")
+
+
+class Person{
+    name
+    surname
+
+    constructor(name: string, surname: string){
+        this.name = name
+        this.surname = surname
+    }
+
+    get fullName(){
+        return this.name + " " + this.surname
+    }
+}
+
+
+const lucasFernandes = new Person("Lucas", "Fernandes")
+
+console.log(lucasFernandes)
+
+console.log(lucasFernandes.fullName)
+
+
+//AULA 8 - Setters
+console.log("")
+console.log("AULA 8 - SETTERS")
+console.log("")
+
+
+class Coords {
+    x! : number
+    y! : number
+
+    set fillX(x : number){
+        if (x === 0 ){
+            console.log("X sem sucesso!")
+            return
+        }
+        this.x = x
+
+        console.log("X inserido com sucesso!")
+    }
+
+    set fillY(y : number){
+        if (y === 0 ){
+            console.log("Y sem sucesso!")
+            return
+        }
+        this.y = y
+
+        console.log("Y inserido com sucesso!")
+    }
+
+    get getCoords(){
+        return `X: ${this.x} e Y: ${this.y}`
+    }
+}
+
+const myCoords = new Coords()
+
+myCoords.fillX = 15
+myCoords.fillY = 10
+
+console.log(myCoords)
+
+console.log(myCoords.getCoords)
