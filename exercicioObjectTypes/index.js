@@ -1,34 +1,36 @@
+"use strict";
 //EXERCICIO DO CHAT GPT
+Object.defineProperty(exports, "__esModule", { value: true });
 function printUser(user) {
-    var message = "User ".concat(user.id, " with the name ").concat(user.name);
+    let message = `User ${user.id} with the name ${user.name}`;
     if (user.email) {
-        message += ", email ".concat(user.email);
+        message += `, email ${user.email}`;
     }
     if (user.age) {
-        message += ", ".concat(user.age, " years ");
+        message += `, ${user.age} years `;
     }
-    message += "in the role of ".concat(user.role);
+    message += `in the role of ${user.role}`;
     console.log(message);
 }
-var userA = {
+const userA = {
     id: 89,
     name: "Lucas Fernandes",
     age: 26,
     email: "lucasgomes@email.com",
     role: "admin"
 };
-var userB = {
+const userB = {
     id: 57,
     name: "Raquel Freitas",
     age: 25,
     role: "user"
 };
-var userC = {
+const userC = {
     id: 77,
     name: "Murilo Fernandes",
     role: "user"
 };
-var userD = {
+const userD = {
     id: 82,
     name: "Luisa Fontoura",
     email: "luisa@email.com",
@@ -44,11 +46,11 @@ console.log("NOVO EXERCICIO");
 function showUserConfig(user) {
     console.log("");
     console.log("User config: ");
-    for (var index in user.config) {
-        console.log("".concat(index, ": ").concat(user.config[index]));
+    for (const index in user.config) {
+        console.log(`${index}: ${user.config[index]}`);
     }
 }
-var user1 = {
+const user1 = {
     config: {
         id: 10,
         username: "Lucas",
@@ -56,7 +58,7 @@ var user1 = {
         theme: "blue"
     }
 };
-var user2 = {
+const user2 = {
     config: {
         id: 17,
         username: "Vitor",
@@ -64,7 +66,7 @@ var user2 = {
         volume: 15
     }
 };
-var user3 = {
+const user3 = {
     config: {
         id: 529,
         username: "Pedro",
@@ -72,7 +74,7 @@ var user3 = {
         theme: "pink"
     }
 };
-var user4 = {
+const user4 = {
     config: {
         id: 485,
         username: "Murilo"
@@ -88,24 +90,24 @@ console.log("NOVO EXERCICIO");
 function printUserInfo(user) {
     console.log("");
     console.log("Users info:");
-    for (var item in user) {
-        console.log("".concat(item, ": ").concat(user[item]));
+    for (const item in user) {
+        console.log(`${item}: ${user[item]}`);
     }
 }
-var admin = {
+const admin = {
     id: 1,
     name: "Lucas",
     permissions: true,
     deleteUsers: true
 };
-var regular = {
+const regular = {
     id: 2,
     name: "Raquel",
     subscriptionType: "premium",
     postsCreated: 42,
     profileComplete: true
 };
-var guest = {
+const guest = {
     id: 3,
     name: "Murilo",
     temporary: true,
@@ -115,3 +117,4 @@ var guest = {
 printUserInfo(admin);
 printUserInfo(regular);
 printUserInfo(guest);
+//# sourceMappingURL=index.js.map

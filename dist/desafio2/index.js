@@ -1,0 +1,5 @@
+"use strict";
+let age = 25;
+let ageConvert = age.toString();
+console.log("A idade sera: " + ageConvert + " anos.");
+//# sourceMappingURL=index.js.map

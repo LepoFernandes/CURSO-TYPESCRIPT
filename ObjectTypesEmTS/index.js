@@ -1,17 +1,19 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //AULA 1 - TIPO DE OBJETO PARA FUNCAO COM INTERFACE
 console.log("");
 console.log("AULA 1");
 console.log("");
 function showProductDetails(product) {
-    console.log("O nome do produto \u00E9 ".concat(product.name, " e o preco: ").concat(product.price));
+    console.log(`O nome do produto é ${product.name} e o preco: ${product.price}`);
     if (product.isAvailable) {
         console.log("Produto disponivel.");
     }
     else {
-        console.log("Produto nao esta disponivel.");
+        console.log(`Produto nao esta disponivel.`);
     }
 }
-var shirt = {
+const shirt = {
     name: "Camisa",
     price: 18.99,
     isAvailable: true
@@ -24,17 +26,17 @@ console.log("AULA 2");
 console.log("");
 function showUserDetails(user) {
     if (user.email) {
-        console.log("O usuario se chama: ".concat(user.name, " e tem email: ").concat(user.email));
+        console.log(`O usuario se chama: ${user.name} e tem email: ${user.email}`);
     }
     else {
-        console.log("Usuario se chama ".concat(user.name));
+        console.log(`Usuario se chama ${user.name}`);
     }
 }
-var userA = {
+const userA = {
     name: "Lucas",
     email: "lucasfgomes166@outlook.com"
 };
-var userB = {
+const userB = {
     name: "Pedro"
 };
 showUserDetails(userA);
@@ -43,7 +45,7 @@ showUserDetails(userB);
 console.log("");
 console.log("AULA 3");
 console.log("");
-var fusca = {
+const fusca = {
     brand: "VolksWagen",
     wheels: 4
 };
@@ -53,7 +55,7 @@ console.log(fusca);
 console.log("");
 console.log("AULA 4");
 console.log("");
-var coords = {
+let coords = {
     x: 10
 };
 coords.y = 15;
@@ -62,21 +64,21 @@ console.log(coords);
 console.log("");
 console.log("AULA 5");
 console.log("");
-var human1 = {
+const human1 = {
     name: "Pedro",
     age: 26
 };
-var superHuman1 = {
+const superHuman1 = {
     name: "Lucas",
     age: 26,
     superPowers: "Force"
 };
-var superHuman2 = {
+const superHuman2 = {
     name: "Vitor",
     age: 26,
     superPowers: "Fire"
 };
-var superHuman3 = {
+const superHuman3 = {
     name: "Paulo",
     age: 26,
     superPowers: "Ice"
@@ -89,7 +91,7 @@ console.log(superHuman3);
 console.log("");
 console.log("AULA 6");
 console.log("");
-var arnold = {
+const arnold = {
     name: "Arnold",
     type: "Shotgun",
     caliber: 12
@@ -100,14 +102,14 @@ console.log(arnold.caliber);
 console.log("");
 console.log("AULA 7");
 console.log("");
-var myArray = ["Laranja", "Banana", "Abacaxi"];
+let myArray = ["Laranja", "Banana", "Abacaxi"];
 //myArray[3] = "Tomate"
 console.log(myArray);
-myArray.forEach(function (item) {
+myArray.forEach((item) => {
     console.log("Fruta: " + item);
 });
-myArray.map(function (item) {
-    return "Fruta: ".concat(item);
+myArray.map((item) => {
+    return `Fruta: ${item}`;
 });
 console.log(myArray);
 //AULA 8 - Tuplas
@@ -115,11 +117,11 @@ console.log("");
 console.log("AULA 8");
 console.log("");
 //number[]
-var myNumbers = [1, 2, 3, 4, 5];
+const myNumbers = [1, 2, 3, 4, 5];
 //const myNumber2: fiveNumbers = [1, 2, 3, 4, 5, 6]
 //const myNumber3: fiveNumbers = [1, "dois", 3, 4, true, 6]
 console.log(myNumbers);
-var person1 = ["Lucas", 26];
+const person1 = ["Lucas", 26];
 console.log(person1[0]);
 console.log(person1);
 //AULA 9 - Tuplas com Readonly
@@ -131,3 +133,4 @@ function showNumbers(number) {
     console.log(number[1]);
 }
 showNumbers([1, 2]);
+//# sourceMappingURL=index.js.map

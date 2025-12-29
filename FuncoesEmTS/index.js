@@ -1,14 +1,5 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //AULA 1 - VOID
 console.log("");
 console.log("AULA 1");
@@ -22,11 +13,11 @@ console.log("");
 console.log("AULA 2");
 console.log("");
 function greeting(name) {
-    return "Hello ".concat(name);
+    return `Hello ${name}`;
 }
 function preGreeting(f, username) {
     console.log("Preparando a funcao");
-    var greet = f(username);
+    const greet = f(username);
     console.log(greet);
 }
 preGreeting(greeting, "Matheus");
@@ -41,16 +32,19 @@ console.log(firstElement([1, 2, 3]));
 console.log(firstElement(["A", "B", "C"]));
 console.log(firstElement([true, false, true]));
 function mergeObjects(obj1, obj2) {
-    return __assign(__assign({}, obj1), obj2);
+    return {
+        ...obj1,
+        ...obj2
+    };
 }
-var newObject = mergeObjects({ name: "Matheus" }, { age: 30, job: "Programmer" });
+const newObject = mergeObjects({ name: "Matheus" }, { age: 30, job: "Programmer" });
 console.log(newObject);
 //AULA 4 - CONSTRAINTS
 console.log("");
 console.log("AULA 4");
 console.log("");
 function biggestNumber(a, b) {
-    var biggest;
+    let biggest;
     if (+a > +b) {
         biggest = a;
     }
@@ -76,17 +70,17 @@ console.log("AULA 6");
 console.log("");
 function apresentarPessoa(name, age, occupation) {
     if (age && occupation) {
-        return console.log("Oi, meu nome \u00E9 ".concat(name, "! Tenho ").concat(age, " anos e sou ").concat(occupation, " "));
+        return console.log(`Oi, meu nome é ${name}! Tenho ${age} anos e sou ${occupation} `);
     }
     else if (age) {
         occupation = "desempregado";
-        return console.log("Oi, meu nome \u00E9 ".concat(name, "! Tenho ").concat(age, " anos e sou ").concat(occupation, " "));
+        return console.log(`Oi, meu nome é ${name}! Tenho ${age} anos e sou ${occupation} `);
     }
     else if (occupation) {
-        return console.log("Oi, meu nome \u00E9 ".concat(name, "! E sou ").concat(occupation, " "));
+        return console.log(`Oi, meu nome é ${name}! E sou ${occupation} `);
     }
     else {
-        return console.log("Oi, meu nome \u00E9 ".concat(name, "! "));
+        return console.log(`Oi, meu nome é ${name}! `);
     }
 }
 apresentarPessoa("Lucas", 26, "Programador");
@@ -97,27 +91,26 @@ apresentarPessoa("Lucas", 26);
 console.log("");
 console.log("AULA 7");
 console.log("");
-function calcularPagamento(valorBase, metodo, parcelas) {
-    if (metodo === void 0) { metodo = "dinheiro"; }
+function calcularPagamento(valorBase, metodo = "dinheiro", parcelas) {
     if (metodo === "dinheiro" || metodo === "pix") {
-        var valorAlterado = valorBase;
+        let valorAlterado = valorBase;
         valorAlterado = valorBase - (valorBase * 0.1);
-        return console.log("Pagamento feito em dinheiro ou pix no valor de ".concat(valorAlterado.toFixed(2)));
+        return console.log(`Pagamento feito em dinheiro ou pix no valor de ${valorAlterado.toFixed(2)}`);
     }
     else if (metodo === "cartao") {
         if (parcelas === 1) {
-            return console.log("Pagamento feito no cartao em 1x de ".concat(valorBase.toFixed(2)));
+            return console.log(`Pagamento feito no cartao em 1x de ${valorBase.toFixed(2)}`);
         }
         else if (parcelas) {
             if (parcelas > 1 && parcelas < 6) {
-                var valorAlterado = valorBase + (valorBase * 0.05);
+                let valorAlterado = valorBase + (valorBase * 0.05);
                 valorAlterado = valorAlterado / parcelas;
-                return console.log("Pagamento feito no cartao em ".concat(parcelas, " de ").concat(valorAlterado.toFixed(2)));
+                return console.log(`Pagamento feito no cartao em ${parcelas} de ${valorAlterado.toFixed(2)}`);
             }
             else if (parcelas >= 7) {
-                var valorAlterado = valorBase + (valorBase * 0.10);
+                let valorAlterado = valorBase + (valorBase * 0.10);
                 valorAlterado = valorAlterado / parcelas;
-                return console.log("Pagamento feito no cartao em ".concat(parcelas, " de ").concat(valorAlterado.toFixed(2)));
+                return console.log(`Pagamento feito no cartao em ${parcelas} de ${valorAlterado.toFixed(2)}`);
             }
         }
     }
@@ -153,12 +146,8 @@ function showErrorMessage(msg) {
 console.log("");
 console.log("AULA 10");
 console.log("");
-function sumAll() {
-    var n = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        n[_i] = arguments[_i];
-    }
-    return n.reduce(function (number, sum) { return sum + number; });
+function sumAll(...n) {
+    return n.reduce((number, sum) => sum + number);
 }
 console.log(sumAll(1, 2, 3, 4, 5));
 console.log(sumAll(358, 566, 7));
@@ -166,10 +155,10 @@ console.log(sumAll(358, 566, 7));
 console.log("");
 console.log("AULA 11");
 console.log("");
-function showDetails(_a) {
-    var name = _a.name, price = _a.price;
-    return "O nome do produto: ".concat(name, ", e ele custa R").concat(price);
+function showDetails({ name, price }) {
+    return `O nome do produto: ${name}, e ele custa R${price}`;
 }
-var shirt = { name: "Camisa", price: 49.99 };
+const shirt = { name: "Camisa", price: 49.99 };
 console.log(showDetails(shirt));
 console.log(showDetails({ name: "Tenis", price: 29.99 }));
+//# sourceMappingURL=index.js.map

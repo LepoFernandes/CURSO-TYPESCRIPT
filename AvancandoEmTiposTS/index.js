@@ -1,22 +1,24 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //AULA 1 - ARRAY
 console.log("AULA 1");
 console.log("");
-var numbers = [1, 2, 3, 4, 5];
+let numbers = [1, 2, 3, 4, 5];
 numbers.push(6);
 console.log(numbers[2]);
-var names = ["Lucas", "Raquel"];
-names.forEach((function (name) {
+const names = ["Lucas", "Raquel"];
+names.forEach((name => {
     console.log(name);
 }));
 //OUTRA SINTAXE DE ARRAY
-var nums = [100, 200];
+const nums = [100, 200];
 nums.push(500);
 console.log(nums);
 //AULA 2 - ANY 
 console.log("");
 console.log("AULA 2");
 console.log("");
-var arr1 = [1, "teste", true, [], { nome: "Lucas" }];
+const arr1 = [1, "teste", true, [], { nome: "Lucas" }];
 console.log(arr1);
 arr1.push([1, 2, 3]);
 console.log(arr1);
@@ -41,7 +43,7 @@ console.log("");
 console.log("AULA 5");
 console.log("");
 setTimeout(function () {
-    var sallary = 1000;
+    const sallary = 1000;
     //console.log(parseFloat(sallary))
     //console.log(sallary)
 }, 2000);
@@ -53,7 +55,7 @@ function passCoordinates(coord) {
     console.log("X coordinates: " + coord.x);
     console.log("Y coordinates: " + coord.y);
 }
-var objCoord = { x: 329, y: 85.6 };
+const objCoord = { x: 329, y: 85.6 };
 passCoordinates(objCoord);
 //AULA 7 - PROPRIEDADES OPCIONAIS E VALIDANDO ARGUMENTOS
 console.log("");
@@ -61,14 +63,14 @@ console.log("AULA 7");
 console.log("");
 function setName(fullname) {
     if (fullname.surname !== undefined) {
-        return "Ola, ".concat(fullname.name, " ").concat(fullname.surname, ", tudo bem?");
+        return `Ola, ${fullname.name} ${fullname.surname}, tudo bem?`;
     }
     else {
-        return "Ola, ".concat(fullname.name, ", tudo bem?");
+        return `Ola, ${fullname.name}, tudo bem?`;
     }
 }
-var objName = { name: "Lucas", surname: "Fernandes" }; //COM SOBRENOME
-var objName2 = { name: "Lucas" }; //SEM SOBRENOME
+const objName = { name: "Lucas", surname: "Fernandes" }; //COM SOBRENOME
+const objName2 = { name: "Lucas" }; //SEM SOBRENOME
 console.log(setName(objName));
 console.log(setName(objName2));
 //AULA 8 - UNION TYPE
@@ -76,11 +78,11 @@ console.log("");
 console.log("AULA 8");
 console.log("");
 function showBalance(balance) {
-    console.log("O saldo da conta e R$".concat(balance));
+    console.log(`O saldo da conta e R$${balance}`);
 }
 showBalance(100);
 showBalance("500");
-var arr2 = [1, "Teste", 5, true, false];
+const arr2 = [1, "Teste", 5, true, false];
 //AULA 9 - AVANCANDO EM UNION TYPE
 console.log("");
 console.log("AULA 9");
@@ -89,7 +91,7 @@ function showUserRole(role) {
     if (typeof role === "boolean") {
         return "Usuario nao aprovado!";
     }
-    return "A funcao do usuario e: ".concat(role);
+    return `A funcao do usuario e: ${role}`;
 }
 console.log(showUserRole(false));
 console.log(showUserRole("Admin"));
@@ -98,7 +100,7 @@ console.log("");
 console.log("AULA 10");
 console.log("");
 function showId(id) {
-    console.log("The ID is: ".concat(id));
+    console.log(`The ID is: ${id}`);
 }
 showId(1);
 showId("2");
@@ -107,9 +109,9 @@ console.log("");
 console.log("AULA 11");
 console.log("");
 function showCoords(obj) {
-    console.log("X: ".concat(obj.x, " Y:").concat(obj.y, " Z:").concat(obj.z));
+    console.log(`X: ${obj.x} Y:${obj.y} Z:${obj.z}`);
 }
-var coordObj = {
+const coordObj = {
     x: 10,
     y: 15,
     z: 20
@@ -119,38 +121,39 @@ showCoords(coordObj);
 console.log("");
 console.log("AULA 12");
 console.log("");
-var somePerson = { name: "Lucas", age: 26 };
+const somePerson = { name: "Lucas", age: 26 };
 console.log(somePerson); //DA PRA IMPLEMENTAR MAIS DADOS JA NO TYPE NAO PQ DARIA ERRO 
 //type personType = {age: number}
 //AULA 13 - LITERAL TYPES
 console.log("");
 console.log("AULA 13");
 console.log("");
-var test;
+let test;
 test = "testando";
 console.log(test);
 function showDirection(direction) {
-    console.log("A direcao sera: ".concat(direction));
+    console.log(`A direcao sera: ${direction}`);
 }
 showDirection("center");
 //AULA 14 - NON-NULL ASSERTATION OPERATORS
 console.log("");
 console.log("AULA 14");
 console.log("");
-var p = document.getElementById("some-p");
+const p = document.getElementById("some-p");
 console.log(p.innerText);
 //AULA 15 - BIGINT
 console.log("");
 console.log("AULA 15");
 console.log("");
-var n;
+let n;
 n = 1000n;
 console.log(n);
 //AULA 16 - SYMBOL
 console.log("");
 console.log("AULA 16");
 console.log("");
-var symbolA = Symbol("a");
-var symbolB = Symbol("a");
+let symbolA = Symbol("a");
+let symbolB = Symbol("a");
 console.log(symbolA == symbolB);
 console.log(symbolA === symbolB);
+//# sourceMappingURL=index.js.map

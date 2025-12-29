@@ -207,3 +207,29 @@ myCoords.fillY = 10
 console.log(myCoords)
 
 console.log(myCoords.getCoords)
+
+
+//AULA 8 - Heranca de interfaces
+console.log("")
+console.log("AULA 8 - HERANCA DE INTERFACES")
+console.log("")
+
+interface showTitle {
+    itemTitle(): string
+}
+
+class blogPost implements showTitle {
+    title 
+
+    constructor(title : string ){
+        this.title = title
+    }
+
+    itemTitle(){
+        return `O titulo do post sera ${this.title}`
+    }
+}
+
+const myPost = new blogPost("Hello World")
+
+console.log(myPost.itemTitle())

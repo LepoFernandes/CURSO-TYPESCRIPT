@@ -176,3 +176,19 @@ myCoords.fillX = 15;
 myCoords.fillY = 10;
 console.log(myCoords);
 console.log(myCoords.getCoords);
+//AULA 8 - Heranca de interfaces
+console.log("");
+console.log("AULA 8 - HERANCA DE INTERFACES");
+console.log("");
+var blogPost = /** @class */ (function () {
+    function blogPost(title) {
+        this.title = title;
+    }
+    blogPost.prototype.itemTitle = function () {
+        return "O titulo do post sera ".concat(this.title);
+    };
+    return blogPost;
+}());
+var myPost = new blogPost("Hello World");
+console.log(myPost.itemTitle());
+console.log("TESTE");

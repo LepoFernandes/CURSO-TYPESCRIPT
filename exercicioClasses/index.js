@@ -1,19 +1,21 @@
+"use strict";
 //EXERCICIO 1
-var Carro = /** @class */ (function () {
-    function Carro(name, brand, year) {
+Object.defineProperty(exports, "__esModule", { value: true });
+class Carro {
+    constructor(name, brand, year) {
         this.engine = 2.0;
         this.name = name;
         this.brand = brand;
         this.year = year;
     }
-    return Carro;
-}());
-var car1 = new Carro("Cruze", "Chevrolet", 2014);
-var car2 = new Carro("Uno Mille", "Fiat", 1994);
-var car3 = new Carro("Corolla", "Toyota", 2008);
+}
+const car1 = new Carro("Cruze", "Chevrolet", 2014);
+const car2 = new Carro("Uno Mille", "Fiat", 1994);
+const car3 = new Carro("Corolla", "Toyota", 2008);
 function showCars(carro) {
-    return console.log("Carro: ".concat(carro.name, ", Marca: ").concat(carro.brand, ", Ano: ").concat(carro.year, " e Motor: ").concat(carro.engine.toFixed(1)));
+    return console.log(`Carro: ${carro.name}, Marca: ${carro.brand}, Ano: ${carro.year} e Motor: ${carro.engine.toFixed(1)}`);
 }
 showCars(car1);
 showCars(car2);
 showCars(car3);
+//# sourceMappingURL=index.js.map
