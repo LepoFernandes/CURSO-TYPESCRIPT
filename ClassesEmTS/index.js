@@ -191,4 +191,14 @@ var blogPost = /** @class */ (function () {
 }());
 var myPost = new blogPost("Hello World");
 console.log(myPost.itemTitle());
-console.log("TESTE");
+var TestingInterface = /** @class */ (function () {
+    function TestingInterface(title) {
+        this.title = title;
+    }
+    TestingInterface.prototype.itemTitle = function () {
+        return "O titulo do post sera ".concat(this.title);
+    };
+    return TestingInterface;
+}());
+var myPost2 = new TestingInterface("Teste");
+console.log(myPost2.itemTitle());

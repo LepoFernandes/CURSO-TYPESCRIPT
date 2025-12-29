@@ -233,3 +233,19 @@ class blogPost implements showTitle {
 const myPost = new blogPost("Hello World")
 
 console.log(myPost.itemTitle())
+
+class TestingInterface implements showTitle{
+    title 
+
+    constructor(title : string ){
+        this.title = title
+    }
+
+    itemTitle(){
+        return `O titulo do post sera ${this.title}`
+    }
+}
+
+
+const myPost2 = new TestingInterface("Teste")
+console.log(myPost2.itemTitle())
