@@ -209,9 +209,9 @@ console.log(myCoords)
 console.log(myCoords.getCoords)
 
 
-//AULA 8 - Heranca de interfaces
+//AULA 9 - Heranca de interfaces
 console.log("")
-console.log("AULA 8 - HERANCA DE INTERFACES")
+console.log("AULA 9 - HERANCA DE INTERFACES")
 console.log("")
 
 interface showTitle {
@@ -249,3 +249,122 @@ class TestingInterface implements showTitle{
 
 const myPost2 = new TestingInterface("Teste")
 console.log(myPost2.itemTitle())
+
+
+//AULA 10 - Override de metodos
+console.log("")
+console.log("AULA 10 - OVERRIDE DE METODOS")
+console.log("")
+
+
+class Base {
+    someMethod(){
+        console.log("alguma coisa")
+    }
+}
+
+
+class Nova extends Base {
+    someMethod(){
+        console.log("testando outra coisa")
+    }
+}
+
+const myObject = new Base()
+
+myObject.someMethod()
+
+const myObject2 = new Nova()
+
+myObject2.someMethod()
+
+
+//AULA 11 - VISIBILIDADES
+console.log("")
+console.log("AULA 11 - PUBLIC")
+console.log("")
+
+class C {
+    x = 10
+}
+
+class D extends C {
+
+}
+
+const cInstance = new C()
+
+console.log(cInstance.x)
+
+const dInstance = new D()
+
+console.log(dInstance.x)
+
+
+console.log("")
+console.log("AULA 12 - PROTECTED")
+console.log("")
+
+class E {
+    protected x = 10
+    protected newMethod(){
+        console.log("teste metodo")
+    }
+}
+
+class F extends E {
+    showX(){
+        console.log("X : " + this.x)
+    }
+
+    usingMethod(){
+       this.newMethod()
+    }
+}
+
+const fInstance = new F()
+
+//console.log(fInstance.x) nao funciona sem o metodo
+
+fInstance.showX()
+fInstance.usingMethod()
+
+
+
+console.log("")
+console.log("AULA 13 - PRIVATE")
+console.log("")
+
+
+class PrivateClass{
+    private name = "Private"
+
+    showName(){
+        console.log("Nome: " + this.name)
+    }
+
+    private privateMethod(){
+        console.log("Metodo privado!")
+    }
+
+    showPrivateMethod(){
+        this.privateMethod()
+    }
+}
+
+const pObject = new PrivateClass()
+
+//console.log(pObject.name) tbm nao funciona sem o metodo
+
+pObject.showName()
+
+//pObject.privateMethod() tbm nao funciona sem metodo
+
+pObject.showPrivateMethod()
+
+
+//class TestingPrivate extends PrivateClass{
+//    myMethod(){
+  //      this.privateMethod()
+    //}
+//}  NAO PODE ACESSAR O METODO DA CLASSE MAE PELAS CLASSES FILHAS

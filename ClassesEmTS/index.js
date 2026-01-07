@@ -202,3 +202,102 @@ var TestingInterface = /** @class */ (function () {
 }());
 var myPost2 = new TestingInterface("Teste");
 console.log(myPost2.itemTitle());
+//AULA 9 - Override de metodos
+console.log("");
+console.log("AULA 9 - OVERRIDE DE METODOS");
+console.log("");
+var Base = /** @class */ (function () {
+    function Base() {
+    }
+    Base.prototype.someMethod = function () {
+        console.log("alguma coisa");
+    };
+    return Base;
+}());
+var Nova = /** @class */ (function (_super) {
+    __extends(Nova, _super);
+    function Nova() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Nova.prototype.someMethod = function () {
+        console.log("testando outra coisa");
+    };
+    return Nova;
+}(Base));
+var myObject = new Base();
+myObject.someMethod();
+var myObject2 = new Nova();
+myObject2.someMethod();
+//AULA 10 - VISIBILIDADES
+console.log("");
+console.log("AULA 10 - PUBLIC");
+console.log("");
+var C = /** @class */ (function () {
+    function C() {
+        this.x = 10;
+    }
+    return C;
+}());
+var D = /** @class */ (function (_super) {
+    __extends(D, _super);
+    function D() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return D;
+}(C));
+var cInstance = new C();
+console.log(cInstance.x);
+var dInstance = new D();
+console.log(dInstance.x);
+console.log("");
+console.log("AULA 11 - PROTECTED");
+console.log("");
+var E = /** @class */ (function () {
+    function E() {
+        this.x = 10;
+    }
+    E.prototype.newMethod = function () {
+        console.log("teste metodo");
+    };
+    return E;
+}());
+var F = /** @class */ (function (_super) {
+    __extends(F, _super);
+    function F() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    F.prototype.showX = function () {
+        console.log("X : " + this.x);
+    };
+    F.prototype.usingMethod = function () {
+        this.newMethod();
+    };
+    return F;
+}(E));
+var fInstance = new F();
+//console.log(fInstance.x) nao funciona sem o metodo
+fInstance.showX();
+fInstance.usingMethod();
+console.log("");
+console.log("AULA 12 - PRIVATE");
+console.log("");
+var PrivateClass = /** @class */ (function () {
+    function PrivateClass() {
+        this.name = "Private";
+    }
+    PrivateClass.prototype.showName = function () {
+        console.log("Nome: " + this.name);
+    };
+    PrivateClass.prototype.privateMethod = function () {
+        console.log("Metodo privado!");
+    };
+    PrivateClass.prototype.showPrivateMethod = function () {
+        this.privateMethod();
+    };
+    return PrivateClass;
+}());
+var pObject = new PrivateClass();
+//console.log(pObject.name) tbm nao funciona sem o metodo
+pObject.showName();
+//pObject.privateMethod() tbm nao funciona sem metodo
+pObject.showPrivateMethod();
