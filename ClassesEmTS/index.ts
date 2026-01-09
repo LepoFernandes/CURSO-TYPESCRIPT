@@ -368,3 +368,152 @@ pObject.showPrivateMethod()
   //      this.privateMethod()
     //}
 //}  NAO PODE ACESSAR O METODO DA CLASSE MAE PELAS CLASSES FILHAS
+
+
+//AULA 14 - Static members
+console.log("")
+console.log("AULA 14 - STATIC MEMBERS")
+console.log("")
+
+
+class StaticMembers {
+    prop = "Teste static"
+    staticMethod(){
+        console.log("Testando com metodos")
+    }
+}
+
+
+// console.log(StaticMembers.prop) dessa forma da erro pois a prop nao pode ser acessada 
+// StaticMembers.staticMethod()  mesmo erro 
+
+
+class StaticMembers2 {
+    static prop2 = "Teste correto"
+    static staticMethod2(){
+        console.log("Teste com jeito certo")
+    }
+}
+
+console.log(StaticMembers2.prop2)
+StaticMembers2.staticMethod2()
+
+
+//AULA 15 - Generic Class
+console.log("")
+console.log("AULA 15 - GENERIC CLASS")
+console.log("")
+
+
+class Item<T , U> {
+    first 
+    second 
+
+
+    constructor(first: T, second: U){
+        this.first = first
+        this.second = second
+
+    }
+
+    get showFirst(){
+        return `O first sera: ${this.first}`
+    }
+
+}
+
+const newItem = new Item("caixa", "surpresa")
+
+console.log(newItem)
+console.log(newItem.showFirst)
+console.log(typeof newItem.first)
+
+
+
+const secondItem = new Item(3, true)
+
+console.log(secondItem)
+console.log(secondItem.showFirst)
+console.log(typeof secondItem.first)
+
+
+
+//AULA 16 - Parameters properties
+console.log("")
+console.log("AULA 16 - PARAMETERS PROPERTIES")
+console.log("")
+
+
+class ParametersClass {
+    
+    constructor(public name: string, private qty: number, private price: number){
+        this.name = name
+        this.qty = qty
+        this.price = price
+    }
+
+    get showQty(){
+        return this.qty
+    }
+
+    get showPrice(){
+        return this.price
+    }
+}
+
+
+const newShirt = new ParametersClass("Camisa", 5, 19.99)
+
+console.log(newShirt)
+console.log(newShirt.name)
+console.log(newShirt.showQty)
+console.log(newShirt.showPrice) //sem os get nao daria pra acessar pois sao private
+
+
+//AULA 17 - Class Expressions
+console.log("")
+console.log("AULA 17 - CLASS EXPRESSIONS")
+console.log("")
+
+const myClass = class<T> {
+    name
+
+    constructor(name: T){
+        this.name = name
+    }
+}
+
+const pessoa = new myClass("Jones")
+
+console.log(pessoa)
+console.log(pessoa.name)
+console.log(typeof pessoa.name)
+
+
+
+//AULA 18 - Abstract class
+console.log("")
+console.log("AULA 18 - ABSTRACT CLASS")
+console.log("")
+
+abstract class AbstractClass {
+    abstract showName() : void
+}
+
+// const newObj = new AbstractClass(); erro por ser abstract
+
+class AbstractExample extends AbstractClass {
+    name
+
+    constructor(name : string){
+        super()
+        this.name = name
+    }
+
+    showName(): void {
+        console.log("Nome: " + this.name)
+    }
+}
+
+const newObj = new AbstractExample("Lucas")
+newObj.showName()
