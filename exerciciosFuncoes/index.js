@@ -1,6 +1,5 @@
 "use strict";
 //EXERCICIO 1
-Object.defineProperty(exports, "__esModule", { value: true });
 function showProductDetails(name, price) {
     console.log(`The ${name} costs ${price.toFixed(2)}`);
 }
@@ -30,4 +29,3 @@ function showItems(arr) {
 showItems(["Casa", "Carro", "Moto"]);
 showItems([1, 2, 3, 4]);
 showItems([false, true]);
-//# sourceMappingURL=index.js.map

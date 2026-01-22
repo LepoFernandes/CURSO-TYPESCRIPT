@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 //AULA 1 - revisao de generics
 console.log("");
 console.log("AULA 1 - GENERICS");
@@ -86,4 +85,3 @@ console.log("");
 console.log("AULA 9 - TEMPLATE LITERALS TYPE");
 console.log("");
 const testing = "some text";
-//# sourceMappingURL=index.js.map

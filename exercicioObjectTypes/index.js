@@ -1,6 +1,5 @@
 "use strict";
 //EXERCICIO DO CHAT GPT
-Object.defineProperty(exports, "__esModule", { value: true });
 function printUser(user) {
     let message = `User ${user.id} with the name ${user.name}`;
     if (user.email) {
@@ -117,4 +116,3 @@ const guest = {
 printUserInfo(admin);
 printUserInfo(regular);
 printUserInfo(guest);
-//# sourceMappingURL=index.js.map

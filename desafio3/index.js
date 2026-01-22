@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 function reviewUsers(user, stars, review) {
     if (typeof stars === "number" && typeof review === "boolean" && review) {
         console.log(`User ${user} give ${stars} stars and leave a message`);
@@ -64,4 +63,3 @@ calculateTotal(59.9, 10);
 calculateTotal("59.9", true);
 calculateTotal(64, 20);
 calculateTotal("59.9", false);
-//# sourceMappingURL=index.js.map

@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 //AULA - 1 = NUMBERS
 console.log("AULA 1");
 console.log(" ");
@@ -38,4 +37,3 @@ let inf = "Teste";
 //NOS DOIS CASOS ELE ENTENDEU QUE SAO STRINGS E NAO ACEITA Q TROQUE PRA NUMBER OU BOOLEAN
 //NA PROXIMA AULA ENSINA A CONFIGURAR O ARQUIVO DO TS USANDO tsc --init 
 console.log("testando 1");
-//# sourceMappingURL=index.js.map

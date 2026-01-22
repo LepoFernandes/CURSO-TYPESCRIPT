@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 //AULA 1 - VOID
 console.log("");
 console.log("AULA 1");
@@ -161,4 +160,3 @@ function showDetails({ name, price }) {
 const shirt = { name: "Camisa", price: 49.99 };
 console.log(showDetails(shirt));
 console.log(showDetails({ name: "Tenis", price: 29.99 }));
-//# sourceMappingURL=index.js.map

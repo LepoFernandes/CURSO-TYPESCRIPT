@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 //AULA 1 - TIPO DE OBJETO PARA FUNCAO COM INTERFACE
 console.log("");
 console.log("AULA 1");
@@ -133,4 +132,3 @@ function showNumbers(number) {
     console.log(number[1]);
 }
 showNumbers([1, 2]);
-//# sourceMappingURL=index.js.map

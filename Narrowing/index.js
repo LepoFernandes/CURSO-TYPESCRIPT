@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 //AULA 1 - TYPEOF TYPE GUARD
 console.log("");
 console.log("AULA 1");
@@ -91,4 +90,3 @@ function showDogDetails(dog) {
 }
 showDogDetails(turca);
 showDogDetails(bob);
-//# sourceMappingURL=index.js.map

@@ -1,6 +1,5 @@
 "use strict";
 //EXERCICIO 1
-Object.defineProperty(exports, "__esModule", { value: true });
 class Carro {
     constructor(name, brand, year) {
         this.engine = 2.0;
@@ -18,4 +17,3 @@ function showCars(carro) {
 showCars(car1);
 showCars(car2);
 showCars(car3);
-//# sourceMappingURL=index.js.map

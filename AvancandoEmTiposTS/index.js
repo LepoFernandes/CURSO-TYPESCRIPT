@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 //AULA 1 - ARRAY
 console.log("AULA 1");
 console.log("");
@@ -156,4 +155,3 @@ let symbolA = Symbol("a");
 let symbolB = Symbol("a");
 console.log(symbolA == symbolB);
 console.log(symbolA === symbolB);
-//# sourceMappingURL=index.js.map
