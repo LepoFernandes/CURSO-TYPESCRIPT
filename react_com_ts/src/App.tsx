@@ -5,6 +5,11 @@ import React from 'react';
 
 import FirstComponent from './components/FIrstComponent';
 
+//5 - DESTRUCTURING NAS PROPS
+
+import SecondComponent from './components/SecondComponent';
+import Destructuring from './components/Destructuring';
+
 function App() {
 
   //1 - VARIAVEIS
@@ -33,6 +38,19 @@ function App() {
         ) }
         <h3>{userGreeting(name)}</h3>
         <FirstComponent />
+        <SecondComponent name = "Segundo"/>
+        <Destructuring 
+        title = "Primeiro post" 
+        content="Algum conteudo" 
+        commentQty={10} 
+        tags={["js","ts","udemy"]} 
+        />
+        <Destructuring 
+        title = "Segundo post" 
+        content="Mais um conteudo" 
+        commentQty={1} 
+        tags={["facul","sql","udemy"]} 
+        />
       </header>
     </div>
   );
