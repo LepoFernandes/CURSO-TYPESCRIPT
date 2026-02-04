@@ -8,7 +8,17 @@ import FirstComponent from './components/FIrstComponent';
 //5 - DESTRUCTURING NAS PROPS
 
 import SecondComponent from './components/SecondComponent';
-import Destructuring from './components/Destructuring';
+import Destructuring, {Category} from './components/Destructuring';
+
+//6- USANDO HOOK USESTATE
+
+import State from './components/State';
+
+//8 - TYPE
+
+type textOrNull = string | null
+type fixed = "Oi" | "Tchau"
+
 
 function App() {
 
@@ -24,6 +34,10 @@ function App() {
     return `Ola, ${name}`
 
   }
+
+  const myText: textOrNull = "Tem algum texto aqui"
+  let mySecondText : textOrNull = null
+  const testandoFixed: fixed = "Oi"
 
   return (
     <div className="App">
@@ -44,13 +58,22 @@ function App() {
         content="Algum conteudo" 
         commentQty={10} 
         tags={["js","ts","udemy"]} 
+        category = {Category.TS}
         />
         <Destructuring 
         title = "Segundo post" 
         content="Mais um conteudo" 
         commentQty={1} 
         tags={["facul","sql","udemy"]} 
+        category = {Category.JS}
         />
+        <State />
+        {myText && 
+        <p>Tem texto na variavel</p>
+        }
+        {mySecondText &&
+        <p>Tem texto na variavel</p>
+        }
       </header>
     </div>
   );
