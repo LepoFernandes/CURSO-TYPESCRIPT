@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {createContext} from 'react';
 
 
 //4 - IMPORTACAO DE COMPONENTES
@@ -14,11 +14,23 @@ import Destructuring, {Category} from './components/Destructuring';
 
 import State from './components/State';
 
+//10 - CONTEXT IMPORTADO
+import Context from './components/Context';
+
 //8 - TYPE
 
 type textOrNull = string | null
 type fixed = "Oi" | "Tchau"
 
+//9 - CONTEXT
+
+interface IAppContext {
+  language : string,
+  framework : string,
+  projects : number
+}
+
+export const AppContext = createContext<IAppContext | null>(null)
 
 function App() {
 
@@ -39,7 +51,16 @@ function App() {
   let mySecondText : textOrNull = null
   const testandoFixed: fixed = "Oi"
 
+  //9 - CONTEXT 
+
+  const contextValue : IAppContext = {
+    language : "JavaScript",
+    framework : "Express",
+    projects : 5
+  }
+
   return (
+    <AppContext.Provider value={contextValue}>
     <div className="App">
       <header className="App-header">
         <h1>
@@ -69,13 +90,13 @@ function App() {
         />
         <State />
         {myText && 
-        <p>Tem texto na variavel</p>
-        }
+        <p>Tem texto na variavel</p>}
         {mySecondText &&
-        <p>Tem texto na variavel</p>
-        }
+        <p>Tem texto na variavel</p>}
+        <Context />
       </header>
     </div>
+    </AppContext.Provider>
   );
 }
 
