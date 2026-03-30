@@ -5,7 +5,7 @@
 
 // 2 - INIT EXPRESS
 
-import express from 'express'
+import express, {Request, Response} from 'express'
 
 const app = express()
 
@@ -37,6 +37,25 @@ app.all("/api/product/check", (req,res) => {
         return res.send("Nao podemos realizar tal operacao!")
     }
         
+})
+
+//5 - INTERFACE DO EXPRESS
+
+app.get("/api/interfaces", (req: Request, res: Response) => {
+    return res.send("Utilizando as interfaces!")
+})
+
+//6 - ENVIANDO JSON
+
+app.get("/api/json", (req: Request, res:Response) => {
+
+    return res.json({
+        name: "Shirt",
+        price: 30.00,
+        color: "Blue",
+        sizes: ["P", "M", "G"]
+    })
+
 })
 
 app.listen(3000, () => {
