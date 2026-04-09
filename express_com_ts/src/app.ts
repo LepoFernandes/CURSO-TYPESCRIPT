@@ -58,6 +58,43 @@ app.get("/api/json", (req: Request, res:Response) => {
 
 })
 
+//7 - ROUTER PARAMETERS
+
+app.get("/api/product/:id", (req: Request, res: Response) => {
+
+    console.log(req.params)
+    
+    const id = req.params.id
+
+    if(id === "1"){
+        const product = {
+            id: 1,
+            name: "Shirt",
+            price: 29.99
+        }
+        return res.json(product)
+
+    } 
+    else {
+        return res.send("Product not found!")
+    }
+    
+})
+
+
+//8 - ROTAS COMPLEXAS
+
+app.get("/api/product/:id/review/:reviewId", (req: Request, res: Response) => {
+    console.log(req.params)
+
+    const id = (req.params.id)
+    const reviewId = (req.params.reviewId)
+
+    return res.send(`Acessando review ${reviewId} do produto ${id}`)
+  
+})
+
+
 app.listen(3000, () => {
     console.log("Aplicacao de TS + Express funcionando!!")
 });
