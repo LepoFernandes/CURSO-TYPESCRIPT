@@ -5,7 +5,7 @@
 
 // 2 - INIT EXPRESS
 
-import express, {Request, Response} from 'express'
+import express, {NextFunction, Request, Response} from 'express'
 
 const app = express()
 
@@ -93,6 +93,39 @@ app.get("/api/product/:id/review/:reviewId", (req: Request, res: Response) => {
     return res.send(`Acessando review ${reviewId} do produto ${id}`)
   
 })
+
+
+//9- ROUTER HANDLER
+
+function getUser(req: Request, res: Response){
+    console.log(`Resgatando o usuario com id: ${req.params.id}`)
+
+    return res.send("Usuario foi encontrado!")
+}
+
+app.get("/api/user/:id", getUser)
+
+
+
+//10 - MIDDLEWARE
+
+function checkUser(req: Request, res: Response, next: NextFunction){
+    if(req.params.id === "1" ){
+        console.log("Pode seguir")
+        next()
+    }else{
+        console.log("Acesso negado")
+    }
+}
+
+app.get("/api/user/:id/acess", checkUser, (req: Request, res: Response) => {
+
+    return res.json({msg: "Bem-vindo a area administrativa!"})
+
+})
+
+
+
 
 
 app.listen(3000, () => {
