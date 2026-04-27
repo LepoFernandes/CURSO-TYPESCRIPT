@@ -12,6 +12,15 @@ const app = express()
 //3 - rota com POST
 app.use(express.json())
 
+//11 - Middleware para todas as rotas
+
+function showPath(req: Request, res : Response, next: NextFunction ){
+    console.log(req.path)
+    next()
+}
+
+app.use(showPath)
+
 app.get("/", (req, res) => {
     return res.send("Hello Express!")
 })
@@ -126,6 +135,26 @@ app.get("/api/user/:id/acess", checkUser, (req: Request, res: Response) => {
 
 
 
+//12- req e res com generics
+
+app.get("/api/user/:id/details/:name", (req: Request<{id: string, name: string}>, res: Response<{status: boolean}>) => {
+    console.log(`ID: ${req.params.id}`)
+    console.log(`Name: ${req.params.name}`)
+
+    return res.json({status: true})
+})
+
+//13- TRATANDO ERROS
+
+app.get("/api/error", (req: Request, res: Response) => {
+    try {
+        //nossa logica
+        throw new Error("Algo deu errado!")
+    } catch (e: any) {
+
+        res.status(500).json({msg: e.message})
+    }
+})
 
 
 app.listen(3000, () => {
